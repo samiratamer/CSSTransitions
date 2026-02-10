@@ -23,15 +23,46 @@ body {
     font-size: 20px;
     margin-bottom: 16px;
 }
-#jumpMenu a {
+#jumpMenu .menu-link {
     display: block;
     color: ivory;
     text-decoration: none;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding: 8px;
+    transition: opacity 0.3s ease;
 }
-#jumpMenu a:hover {
+#jumpMenu .menu-link:hover {
     opacity: 0.75;
+}
+/* Menu section with dropdown */
+.menu-section {
+    margin-bottom: 15px;
+}
+.menu-section.dropdown {
+    position: relative;
+}
+/* Dropdown content in left menu */
+#jumpMenu .dropdown-content {
+    display: none;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+#jumpMenu .dropdown:hover .dropdown-content {
+    display: block;
+}
+#jumpMenu .dropdown-content a {
+    display: block;
+    color: ivory;
+    text-decoration: none;
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#jumpMenu .dropdown-content a:hover {
+    background-color: rosybrown;
+    color: ivory;
 }
 /* Header (Fixed Top) */
 header {
@@ -42,7 +73,7 @@ header {
     height: 90px;
     background-color: linen;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 40px;
     z-index: 1000;
@@ -51,61 +82,6 @@ header {
 header p {
     font-size: 28px;
     margin: 0;
-}
-header nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-header nav button {
-    background-color: transparent;
-    border: 1px solid rosybrown;
-    color: dimgray;
-    padding: 8px 14px;
-    margin-left: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-header nav button:hover {
-    background-color: rosybrown;
-    color: ivory;
-}
-/* Dropdown wrapper */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: linen;
-    border: 1px solid rosybrown;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 2000;
-}
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-/* Dropdown links */
-.dropdown-content a {
-    display: block;
-    color: dimgray;
-    text-decoration: none;
-    padding: 8px;
-    margin-bottom: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* Dropdown link hover effect */
-.dropdown-content a:hover {
-    background-color: rosybrown;
-    color: ivory;
 }
 /* Main Content */
 main {

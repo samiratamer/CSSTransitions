@@ -20,18 +20,6 @@ body {
     background-color: darkolivegreen;
     padding: 24px;
     color: ivory;
-
-    /* NEW: hidden by default for rubric */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s ease;
-}
-
-/* Show jump menu when hovering Recent Articles button */
-#recentBtn:hover + #jumpMenu,
-#jumpMenu:hover {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 #jumpMenu h2 {
@@ -45,13 +33,10 @@ body {
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-/* NEW: jump menu hover effect */
 #jumpMenu a:hover {
-    background-color: ivory;
-    color: darkolivegreen;
+    opacity: 0.75;
 }
 
 /* Header (Fixed Top) */
@@ -83,10 +68,8 @@ header nav button {
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-/* NEW: button hover (rubric) */
 header nav button:hover {
     background-color: rosybrown;
     color: ivory;
@@ -120,16 +103,6 @@ article {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-
-    /* NEW: light text + transition */
-    color: gray;
-    transition: color 2s ease, transform 2s ease;
-}
-
-/* NEW: hover behavior (rubric) */
-article:hover {
-    color: dimgray;
-    transform: scale(1.08);
 }
 
 article h2 {
@@ -142,30 +115,10 @@ article p {
     line-height: 1.7;
 }
 
-/* NEW: first letter styling */
-article > p:first-of-type::first-letter {
-    font-family: "Times New Roman", serif;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-/* Read More link */
 article a {
     color: seagreen;
     text-decoration: none;
     font-weight: bold;
-}
-
-/* NEW: arrow for Google links */
-article a[href*="google"]::after {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-left: 6px;
-    background-image: url("arrowarrow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 article a:hover {

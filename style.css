@@ -2,14 +2,12 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background-color: ivory;
     color: dimgray;
 }
-
 /* Jump Menu (Left Sidebar) */
 #jumpMenu {
     position: fixed;
@@ -21,12 +19,10 @@ body {
     padding: 24px;
     color: ivory;
 }
-
 #jumpMenu h2 {
     font-size: 20px;
     margin-bottom: 16px;
 }
-
 #jumpMenu a {
     display: block;
     color: ivory;
@@ -34,11 +30,9 @@ body {
     margin-bottom: 10px;
     font-size: 14px;
 }
-
 #jumpMenu a:hover {
     opacity: 0.75;
 }
-
 /* Header (Fixed Top) */
 header {
     position: fixed;
@@ -54,12 +48,15 @@ header {
     z-index: 1000;
     border-bottom: 1px solid darkgray;
 }
-
 header p {
     font-size: 28px;
     margin: 0;
 }
-
+header nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 header nav button {
     background-color: transparent;
     border: 1px solid rosybrown;
@@ -68,13 +65,48 @@ header nav button {
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
 header nav button:hover {
     background-color: rosybrown;
     color: ivory;
 }
-
+/* Dropdown wrapper */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background-color: linen;
+    border: 1px solid rosybrown;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 2000;
+}
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Dropdown links */
+.dropdown-content a {
+    display: block;
+    color: dimgray;
+    text-decoration: none;
+    padding: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Dropdown link hover effect */
+.dropdown-content a:hover {
+    background-color: rosybrown;
+    color: ivory;
+}
 /* Main Content */
 main {
     margin-left: 15%;
@@ -82,13 +114,11 @@ main {
     padding-left: 30px;
     padding-right: 30px;
 }
-
 main h1 {
     font-size: 32px;
     text-align: center;
     margin-bottom: 40px;
 }
-
 /* Articles Layout */
 #container {
     display: flex;
@@ -96,35 +126,48 @@ main h1 {
     gap: 30px;
     justify-content: center;
 }
-
 article {
     width: 300px;
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    color: lightgray;
+    transition: color 2s ease, max-height 2s ease, padding 2s ease;
+    max-height: 200px;
+    overflow: hidden;
 }
-
+article:hover {
+    color: dimgray;
+    max-height: 1000px;
+}
 article h2 {
     font-size: 22px;
     margin-top: 0;
 }
-
 article p {
     font-size: 14px;
     line-height: 1.7;
 }
-
+/* First letter styling for article main text */
+article p:first-of-type::first-letter {
+    font-family: "Times New Roman", serif;
+    font-size: 36px;
+}
 article a {
     color: seagreen;
     text-decoration: none;
     font-weight: bold;
 }
-
 article a:hover {
     text-decoration: underline;
 }
-
+/* Arrow after "Read more" links (Google links) */
+article a[href="#"]::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="seagreen" d="M1.5 1.5l9 4.5-9 4.5V1.5z"/></svg>');
+    margin-left: 5px;
+    display: inline-block;
+}
 /* Thank You Message */
 #thanks {
     position: fixed;
@@ -137,7 +180,6 @@ article a:hover {
     font-size: 14px;
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-
 /* Footer */
 footer {
     margin-top: 60px;

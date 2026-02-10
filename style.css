@@ -1,77 +1,112 @@
-/* Reset */
+/* Base reset */
 * {
     box-sizing: border-box;
 }
 
-/* Base */
 body {
     margin: 0;
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     background-color: ivory;
     color: dimgray;
 }
 
-/* NAV BAR */
-#menuBar {
+/* Jump Menu (Left Sidebar) */
+#jumpMenu {
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: linen;
-    padding: 15px;
-    display: flex;
-    gap: 15px;
-    z-index: 1000;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: darkolivegreen;
+    padding: 24px;
+    color: ivory;
+
+    /* NEW: hidden by default for rubric */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
 }
 
-#menuBar button {
+/* Show jump menu when hovering Recent Articles button */
+#recentBtn:hover + #jumpMenu,
+#jumpMenu:hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#jumpMenu h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+#jumpMenu a {
+    display: block;
+    color: ivory;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* NEW: jump menu hover effect */
+#jumpMenu a:hover {
+    background-color: ivory;
+    color: darkolivegreen;
+}
+
+/* Header (Fixed Top) */
+header {
+    position: fixed;
+    top: 0;
+    left: 15%;
+    width: 85%;
+    height: 90px;
+    background-color: linen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+    border-bottom: 1px solid darkgray;
+}
+
+header p {
+    font-size: 28px;
+    margin: 0;
+}
+
+header nav button {
     background-color: transparent;
     border: 1px solid rosybrown;
+    color: dimgray;
     padding: 8px 14px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#menuBar button:hover {
+/* NEW: button hover (rubric) */
+header nav button:hover {
     background-color: rosybrown;
     color: ivory;
 }
 
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: whitesmoke;
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-    top: 40px;
-    width: 160px;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li a {
-    display: block;
-    padding: 6px;
-    color: dimgray;
-    text-decoration: none;
-}
-
-.dropdown-menu li a:hover {
-    background-color: seagreen;
-    color: ivory;
-}
-
-/* MAIN */
+/* Main Content */
 main {
-    padding-top: 100px;
+    margin-left: 15%;
+    padding-top: 130px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
+main h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Articles Layout */
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -79,29 +114,49 @@ main {
     justify-content: center;
 }
 
-/* ARTICLES */
 article {
     width: 300px;
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
-    color: lightgray;
-    transition: all 2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    /* NEW: light text + transition */
+    color: gray;
+    transition: color 2s ease, transform 2s ease;
 }
 
+/* NEW: hover behavior (rubric) */
 article:hover {
     color: dimgray;
     transform: scale(1.08);
 }
 
-/* First letter styling */
+article h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+article p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* NEW: first letter styling */
 article > p:first-of-type::first-letter {
     font-family: "Times New Roman", serif;
     font-size: 36px;
     font-weight: bold;
 }
 
-/* Read More arrow */
+/* Read More link */
+article a {
+    color: seagreen;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* NEW: arrow for Google links */
 article a[href*="google"]::after {
     content: "";
     display: inline-block;
@@ -113,9 +168,27 @@ article a[href*="google"]::after {
     background-repeat: no-repeat;
 }
 
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Thank You Message */
+#thanks {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: rosybrown;
+    color: ivory;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
 /* Footer */
 footer {
     margin-top: 60px;
     padding: 30px;
     background-color: linen;
+    font-size: 14px;
 }

@@ -18,10 +18,14 @@ body {
     background-color: darkolivegreen;
     padding: 24px;
     color: ivory;
+    border-right: 4px solid rosybrown;
 }
 #jumpMenu h2 {
     font-size: 20px;
     margin-bottom: 16px;
+    color: rosybrown;
+    border-bottom: 2px solid rosybrown;
+    padding-bottom: 8px;
 }
 #jumpMenu .menu-link {
     display: block;
@@ -30,10 +34,13 @@ body {
     margin-bottom: 15px;
     font-size: 16px;
     padding: 8px;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    border-left: 3px solid transparent;
 }
 #jumpMenu .menu-link:hover {
-    opacity: 0.75;
+    opacity: 1;
+    background-color: rgba(188, 143, 143, 0.3);
+    border-left: 3px solid rosybrown;
 }
 /* Menu section with dropdown */
 .menu-section {
@@ -47,6 +54,9 @@ body {
     display: none;
     padding-left: 15px;
     margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px 15px;
 }
 #jumpMenu .dropdown:hover .dropdown-content {
     display: block;
@@ -55,10 +65,12 @@ body {
     display: block;
     color: ivory;
     text-decoration: none;
-    padding: 6px 8px;
+    padding: 8px 10px;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
 }
 #jumpMenu .dropdown-content a:hover {
     background-color: rosybrown;
@@ -77,11 +89,13 @@ header {
     align-items: center;
     padding: 0 40px;
     z-index: 1000;
-    border-bottom: 1px solid darkgray;
+    border-bottom: 3px solid rosybrown;
 }
 header p {
     font-size: 28px;
     margin: 0;
+    color: rosybrown;
+    font-weight: bold;
 }
 /* Main Content */
 main {
@@ -109,17 +123,20 @@ article {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     color: lightgray;
-    transition: color 2s ease, max-height 2s ease, padding 2s ease;
+    transition: color 2s ease, max-height 2s ease, padding 2s ease, border 2s ease;
     max-height: 200px;
     overflow: hidden;
+    border: 2px solid transparent;
 }
 article:hover {
     color: dimgray;
     max-height: 1000px;
+    border: 2px solid rosybrown;
 }
 article h2 {
     font-size: 22px;
     margin-top: 0;
+    color: rosybrown;
 }
 article p {
     font-size: 14px;
@@ -162,4 +179,10 @@ footer {
     padding: 30px;
     background-color: linen;
     font-size: 14px;
+    border-top: 3px solid rosybrown;
+}
+footer p {
+    color: rosybrown;
+    font-weight: bold;
+    font-size: 16px;
 }

@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MyBlog</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyBlog</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
+    <body>
+        <!-- Jump Menu -->
+        <nav id="jumpMenu">
+            <h2>Jump to an Article</h2>
+            <a href="#a1">Article 1</a>
+            <a href="#a2">Article 2</a>
+            <a href="#a3">Article 3</a>
+            <a href="#a4">Article 4</a>
+            <a href="#a5">Article 5</a>
+            <a href="#a6">Article 6</a>
+            <a href="#a7">Article 7</a>
+            <a href="#a8">Article 8</a>
+            <a href="#a9">Article 9</a>
+            <a href="#a10">Article 10</a>
+        </nav>
 
-    <!-- Navigation -->
-    <nav id="menuBar">
-        <div class="nav-item dropdown">
-            <button>Recent Articles</button>
-            <ul class="dropdown-menu">
-                <li><a href="#a1">Article 1</a></li>
-                <li><a href="#a2">Article 2</a></li>
-                <li><a href="#a3">Article 3</a></li>
-                <li><a href="#a4">Article 4</a></li>
-                <li><a href="#a5">Article 5</a></li>
-                <li><a href="#a6">Article 6</a></li>
-                <li><a href="#a7">Article 7</a></li>
-                <li><a href="#a8">Article 8</a></li>
-                <li><a href="#a9">Article 9</a></li>
-                <li><a href="#a10">Article 10</a></li>
-            </ul>
-        </div>
+        <main>
+            <header>
+                <p>MyBlog.com</p>
+                <nav>
+                    <!-- ONLY change here: id added -->
+                    <button id="recentBtn">Recent Articles</button>
+                    <button>Services</button>
+                    <button>Mission</button>
+                    <button>About Us</button>
+                </nav>
+            </header>
 
-        <button>Services</button>
-        <button>Mission</button>
-        <button>About Us</button>
-    </nav>
+            <h1>Recent Journal Articles</h1>
 
-    <main>
-        <header>
-            <p>MyBlog.com</p>
-        </header>
+            <div id="container">
+                <article id="a1">
+                    <h2>Article 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eros magna, efficitur a facilisis id, venenatis in elit.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-        <h1>Recent Journal Articles</h1>
+                <article id="a2">
+                    <h2>Article 2</h2>
+                    <p>Sed sed neque eget justo venenatis rutrum vitae quis ante. Sed ut iaculis dui, eget commodo nisi.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-        <div id="container">
+                <article id="a3">
+                    <h2>Article 3</h2>
+                    <p>Vivamus lectus ante, venenatis sed placerat id, pretium a est. Nulla facilisi.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-            <!-- ARTICLES -->
-            <!-- (Only first shown — rest are identical except ID/title) -->
+                <article id="a4">
+                    <h2>Article 4</h2>
+                    <p>Proin mi ipsum, egestas in diam nec, volutpat scelerisque est. Proin quis ullamcorper lorem.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-            <article id="a1">
-                <h2>Article 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                <p><a href="https://www.google.com">Read more...</a></p>
-            </article>
+                <article id="a5">
+                    <h2>Article 5</h2>
+                    <p>Sed suscipit vestibulum felis ut aliquam. Pellentesque tincidunt justo non velit consectetur.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-            <article id="a2">
-                <h2>Article 2</h2>
-                <p>Sed sed neque eget justo venenatis rutrum vitae quis ante...</p>
-                <p><a href="https://www.google.com">Read more...</a></p>
-            </article>
+                <article id="a6">
+                    <h2>Article 6</h2>
+                    <p>Phasellus nunc sapien, dignissim in magna id, egestas condimentum erat.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-            <!-- Repeat through Article 10 -->
-        </div>
+                <article id="a7">
+                    <h2>Article 7</h2>
+                    <p>Mauris tempus ligula euismod massa commodo vehicula.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-        <p id="thanks">Thank you for visiting!</p>
+                <article id="a8">
+                    <h2>Article 8</h2>
+                    <p>Integer at ligula semper, viverra enim et, malesuada urna.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-        <footer>
-            <p>Contact Us!</p>
-            <address>
-                (555) 123-1234 • contact@myDomain.com • Orlando, FL
-            </address>
-        </footer>
-    </main>
+                <article id="a9">
+                    <h2>Article 9</h2>
+                    <p>Sed at augue nec turpis condimentum vulputate.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
 
-</body>
+                <article id="a10">
+                    <h2>Article 10</h2>
+                    <p>Sed erat elit, maximus ut ullamcorper vitae, mattis vel ante.</p>
+                    <p><a href="https://www.google.com">Read more...</a></p>
+                </article>
+            </div>
+
+            <p id="thanks">Thank you for visiting!</p>
+
+            <footer>
+                <p>Contact Us!</p>
+                <address>
+                    Phone: (555) 123-1234<br>
+                    Email: <a href="#">contact@myDomain.com</a><br>
+                    Address: 111 Fictional Place, Orlando, FL 32825
+                </address>
+            </footer>
+        </main>
+    </body>
 </html>
